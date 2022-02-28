@@ -21,7 +21,7 @@ class ProductRepositoryTest {
     try {
       dataSource.setUrl("jdbc:mariadb://localhost:3306/exam-test?useUnicode=true");
       dataSource.setUserName("root");
-      dataSource.setPassword("root555");
+      dataSource.setPassword("****");
     } catch (SQLException sqle) {
       throw new IllegalStateException("Cannot reach DataBase!", sqle);
     }

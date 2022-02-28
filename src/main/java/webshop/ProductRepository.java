@@ -46,6 +46,10 @@ public class ProductRepository {
 
 
     public void updateProductStock(long id, int amount) {
-
+        jdbcTemp.update(
+                "UPDATE products" +
+                        " SET stock = stock - ?" +
+                        " WHERE id = ?;",
+                amount, id);
     }
 }
