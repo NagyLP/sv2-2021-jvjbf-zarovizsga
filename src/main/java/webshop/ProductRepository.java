@@ -33,4 +33,19 @@ public class ProductRepository {
     }
 
 
+    public Product findProductById(long id) {
+        return jdbcTemp.queryForObject(
+                "SELECT * FROM products" +
+                        " WHERE id = ?;",
+                (rs, rowNum) -> new Product(rs.getLong("id"),
+                        rs.getString("product_name"),
+                        rs.getInt("price"),
+                        rs.getInt("stock")),
+                id);
+    }
+
+
+    public void updateProductStock(long id, int amount) {
+
+    }
 }
