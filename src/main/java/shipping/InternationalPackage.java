@@ -11,22 +11,22 @@ public class InternationalPackage implements Transportable {
     private final boolean breakable;
 
     private String destinationCountry;
-    private int distanceKm;
+    private int distance;
 
     public InternationalPackage(
-            int weight, boolean breakable, String destinationCountry, int distanceKm) {
+            int weight, boolean breakable, String destinationCountry, int distance) {
         this.weight = weight;
         this.breakable = breakable;
         this.destinationCountry = destinationCountry;
-        this.distanceKm = distanceKm;
+        this.distance = distance;
     }
 
 
     @Override
     public int calculateShippingPrice() {
         return breakable ?
-                BREAKABLE_PRICEiNCREASER * INLAND_TRANS_PRICE + (distanceKm * INTERNATIONAL_PRICE_PER_KM)
-                : INLAND_TRANS_PRICE + (distanceKm * INTERNATIONAL_PRICE_PER_KM);
+                BREAKABLE_PRICEiNCREASER * INLAND_TRANS_PRICE + (distance * INTERNATIONAL_PRICE_PER_KM)
+                : INLAND_TRANS_PRICE + (distance * INTERNATIONAL_PRICE_PER_KM);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class InternationalPackage implements Transportable {
         return destinationCountry;
     }
 
-    public int getDistanceKm() {
-        return distanceKm;
+    public int getDistance() {
+        return distance;
     }
 }
