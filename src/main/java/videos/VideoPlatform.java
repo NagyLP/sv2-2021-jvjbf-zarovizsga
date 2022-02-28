@@ -17,19 +17,23 @@ public class VideoPlatform {
 
     public void readDataFromFile(Path path) {
         try (BufferedReader br = Files.newBufferedReader(path)) {
-
             br.readLine();
             while (br.ready()) {
-                String[] elements = br.readLine().split(";");
-                channels.add(new Channel(
-                        elements[0],
-                        Integer.parseInt(elements[1]),
-                        Integer.parseInt(elements[2])
-                ));
+                addChannelFromLine(br.readLine());
             }
+
         } catch (IOException e) {
             throw new IllegalArgumentException("Cannot open file for read!", e);
         }
+    }
+
+    private void addChannelFromLine(String line) {
+        String[] elements = line.split(";");
+        channels.add(new Channel(
+                elements[0],
+                Integer.parseInt(elements[1]),
+                Integer.parseInt(elements[2])
+        ));
     }
 
     public int calculateSumOfVideos() {
@@ -39,4 +43,6 @@ public class VideoPlatform {
         }
         return sumOfVideos;
     }
+
+
 }
