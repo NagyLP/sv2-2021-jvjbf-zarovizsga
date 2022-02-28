@@ -9,6 +9,11 @@ public class ProductService {
     }
 
 
-    public void saleProduct(long generatedId, int i) {
+    public void saleProduct(long id, int amount) {
+        Product product = productRepository.findProductById(id);
+        if(product.getStock() < amount) {
+            throw new IllegalArgumentException("Low stock");
+        }
+        productRepository.updateProductStock(id, amount);
     }
 }
