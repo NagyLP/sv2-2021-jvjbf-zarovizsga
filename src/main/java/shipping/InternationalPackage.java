@@ -3,7 +3,7 @@ package shipping;
 public class InternationalPackage implements Transportable {
 
     private static final int INLAND_TRANS_PRICE = 1200;
-    private static final int BREAKABLE_PRICEiNCREASER = 2;
+    private static final int BREAKABLE_FEEiNCREASER = 2;
     private static final int INTERNATIONAL_PRICE_PER_KM = 10;
 
 
@@ -25,7 +25,7 @@ public class InternationalPackage implements Transportable {
     @Override
     public int calculateShippingPrice() {
         return breakable ?
-                BREAKABLE_PRICEiNCREASER * INLAND_TRANS_PRICE + (distance * INTERNATIONAL_PRICE_PER_KM)
+                BREAKABLE_FEEiNCREASER * INLAND_TRANS_PRICE + (distance * INTERNATIONAL_PRICE_PER_KM)
                 : INLAND_TRANS_PRICE + (distance * INTERNATIONAL_PRICE_PER_KM);
     }
 
