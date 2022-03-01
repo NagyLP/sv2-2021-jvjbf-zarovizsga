@@ -2,7 +2,7 @@ package sentences;
 
 public class SentenceTransformer {
 
-    public static final String ENDS = ".!?";
+    public final String ENDS = ".!?";
 
     public String shortenSentence(String sentence) {
         isValidSentence(sentence);

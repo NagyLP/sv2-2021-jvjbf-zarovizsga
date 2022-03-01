@@ -2,8 +2,8 @@ package shipping;
 
 public class NationalPackage implements Transportable {
 
-    private static final int INLAND_TRANS_PRICE = 1000;
-    private static final int BREAKABLE_PRICEiNCREASER = 2;
+    private final int INLAND_TRANS_PRICE = 1000;
+    private final int BREAKABLE_PRICEiNCREASER = 2;
 
     private final int weight;
     private final boolean breakable;
