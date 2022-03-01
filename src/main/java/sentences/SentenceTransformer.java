@@ -16,7 +16,8 @@ public class SentenceTransformer {
         char charFirst = sentence.charAt(0);
         char charLast = sentence.charAt(sentence.length() - 1);
 
-        if (charFirst < 'A' || charFirst > 'Z') throw new IllegalArgumentException("Must start with capital letter!");
+        if (charFirst < 'A' || charFirst > 'Z')
+            throw new IllegalArgumentException("Must start with capital letter!");
         if (charLast != '.' && charLast != '!' && charLast != '?')
             throw new IllegalArgumentException("Must end with . ! or ?");
 
