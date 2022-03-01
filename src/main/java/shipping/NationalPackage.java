@@ -17,7 +17,6 @@ public class NationalPackage implements Transportable {
     public int calculateShippingPrice() {
         if (breakable) {
             return INLAND_TRANS_PRICE * BREAKABLE_PRICEiNCREASER;
-
         } else {
             return INLAND_TRANS_PRICE;
         }
