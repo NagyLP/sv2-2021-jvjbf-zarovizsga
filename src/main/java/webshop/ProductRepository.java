@@ -29,6 +29,7 @@ public class ProductRepository {
             stmt.setInt(3, stock);
             return stmt;
         }, keyHolder);
+
         return keyHolder.getKey().longValue();
     }
 
